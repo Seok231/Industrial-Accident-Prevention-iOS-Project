@@ -1,19 +1,27 @@
-## 프로젝트 소개
-작업현장에서 작업자의 넘어짐, 사람 수를 감지하는 CCTV를 구현한 프로젝트입니다.
+# 산업재해 모니터링 시스템
 
+**산업현장**에서 **작업자**의 **넘어짐**, **지정된 작업자 수**, **금지구역 침범**을 **객체검출**을 이용해 **낮은 비용**으로 **산업재해**를 **모니터링**하고 **예방**을 기대하는 **프로젝트**입니다.
 
-CCTV는 Python을 사용한 추론 방식과 iOS의 CoreML을 사용하여 추론하는 방식이 있습니다.
+**라즈베리파이**를 이용한 **영상 송출**과 **iOS** 기기에서 **기기 추론**을 바탕으로 해당 **상황**이 **발생**하게 되면 **설정된** 관리자의 **iOS** 기기로 **APNs**을 이용해 신속하게 **알림**을 보냅니다.
 
+### 사용된 기술 및 라이브러리
 
-검출된 상세 내용은 Firebase Database에 저장됩니다.
-
-
-외부에서 실시간 영상을 확인하기 위해 Nginx를 사용하여 진행하였습니다.
-
-
-> 본 프로젝트는 제 첫 프로젝트이기에 다소 부족한 모습이 많이 보일 수 있습니다.
-> 
-> 너그럽게 봐주시면 감사하겠습니다 :)
+- **Swift, UIKit**
+- **Firebase**( RealtimeDatabase, Storage, Messaging, GoogleSignIn )
+- **Nginx Media Server** ( RTMP → Nginx → HLS )
+- **Google Colab** ( Train, Create Logic, Object detection Testing  )
+- **HaishinKit** ( RTMP → Nginx )
+    
+    > https://github.com/shogo4405/HaishinKit.swift
+    > 
+- **CoreML Tools** ( PyTorch → CoreML )
+    
+    > https://github.com/apple/coremltools
+    > 
+- **Roboflow** ( Train dataset )
+    
+    > [KeepWalking DataSet](https://app.roboflow.com/keepwalking/falldown-rqrk8/deploy/2)
+    >
 
 ## 구성도
 
